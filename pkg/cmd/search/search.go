@@ -5,6 +5,7 @@ import (
 	"github.com/cli/cli/v2/pkg/cmdutil"
 	"github.com/spf13/cobra"
 
+	searchAICmd "github.com/cli/cli/v2/pkg/cmd/search/ai"
 	searchCodeCmd "github.com/cli/cli/v2/pkg/cmd/search/code"
 	searchCommitsCmd "github.com/cli/cli/v2/pkg/cmd/search/commits"
 	searchIssuesCmd "github.com/cli/cli/v2/pkg/cmd/search/issues"
@@ -50,6 +51,7 @@ func NewCmdSearch(f *cmdutil.Factory) *cobra.Command {
 	cmd.AddCommand(searchIssuesCmd.NewCmdIssues(f, nil))
 	cmd.AddCommand(searchPrsCmd.NewCmdPrs(f, nil))
 	cmd.AddCommand(searchReposCmd.NewCmdRepos(f, nil))
+	cmd.AddCommand(searchAICmd.NewCmdAI(f, nil))
 
 	return cmd
 }
